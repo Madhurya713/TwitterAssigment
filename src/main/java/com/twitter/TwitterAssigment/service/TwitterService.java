@@ -1,8 +1,8 @@
 package com.twitter.TwitterAssigment.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.social.twitter.api.Twitter;
+import org.springframework.social.twitter.api.TwitterProfile;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,7 +16,7 @@ public class TwitterService {
        this.twitter = twitter;
    }
 
-   public List<User> searchUsers(String query) {
+   public List<TwitterProfile> searchUsers(String query) {
        return twitter.userOperations().searchForUsers(query);
    }
 }
